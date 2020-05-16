@@ -4,34 +4,7 @@ import { connect } from "react-redux";
 import TrelloActionButton from "./TrelloActionButton";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { sort } from "../actions";
-import styled from "styled-components";
-
-const ListContainer = styled.div`
-  display: flex;
-  felxDirection: row;
-`;
-
-const HeaderContainer = styled.div`
-  width: 100%;
-  background: #0067a3;
-  height: 50px;
-  color: white;
-  font-size: 36px;
-  padding-top: 10px;
-  text-align: center;
-`;
-
-const FooterContainer = styled.div`
-  width: 100%;
-  background: #0067a3;
-  height: 50px;
-  color: white;
-  font-size: 36px;
-  padding-top: 10px;
-  text-align: center;
-  bottom: 0;
-  position: absolute;
-`;
+import './App.css'
 
 class App extends Component {
 
@@ -58,19 +31,19 @@ class App extends Component {
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
       <div className="App">
-        <HeaderContainer>Kanban Board</HeaderContainer>
+        <div class='head'>Kanban Board</div>
         <Droppable droppableId="all-lists" direction="horizontal" type="list">
           {provided => (
-            <ListContainer {...provided.droppableProps} ref={provided.innerRef}>
+            <div class='list-container' {...provided.droppableProps} ref={provided.innerRef}>
               { lists.map((list, index) => (
                 <TrelloList listID={list.id} key={list.id} title={list.title} cards={list.cards} index={index}/>
               ))}
               {provided.placeholder}
               <TrelloActionButton list />
-            </ListContainer>
+            </div>
           )}
         </Droppable>
-        <FooterContainer>Kanban Board</FooterContainer>
+        <div class='foot'>Kanban Board</div>
       </div>
       </DragDropContext>
     );
