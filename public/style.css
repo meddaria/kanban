@@ -4,6 +4,12 @@
     font-family: Verdana, sans-serif;
 }
 
+.App {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .back {
     background-color: #0079bf;
 }

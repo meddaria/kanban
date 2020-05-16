@@ -102,7 +102,6 @@ class TrelloActionButton extends React.Component {
                 style={{
                     overflow: "visible",
                     minHeight: 80,
-                    minWidth: 272,
                     padding: "6px 8px 2px",
                     marginLeft: marginLeft,
                     marginTop: 8
@@ -116,7 +115,6 @@ class TrelloActionButton extends React.Component {
                     onChange={this.handleInputChange}
                     style={{
                         resize: "none",
-                        width: "100%",
                         outline: "none",
                         overflow: "hidden",
                         border: "none"
@@ -148,7 +146,6 @@ const styles = {
         cursor: "pointer",
         borderRadius: 3,
         height: 36,
-        width: 272,
         marginTop: 8,
         marginLeft: 8
     },
